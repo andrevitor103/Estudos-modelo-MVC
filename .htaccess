@@ -1,0 +1,13 @@
+
+RewriteEngine on
+ 
+# Se NÃO for um arquivo executar as regras
+RewriteCond %{REQUEST_FILENAME} !-f
+ 
+# Se NÃO for um diretório executar as regras
+RewriteCond %{REQUEST_FILENAME} !-d
+ 
+# Redireciona para index.php se antender as condições acima
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+options -Indexes
